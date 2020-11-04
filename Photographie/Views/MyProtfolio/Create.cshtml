@@ -1,0 +1,29 @@
+﻿@model Photographie.ViewModel.PhotoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container" style="margin-top:80px">
+    <h1 class="alert alert-primary">Add New Images</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="file" class="control-label"></label>
+                    <input type="file" asp-for="file" name="file" class="form-control" />
+                    <span asp-validation-for="file" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <input type="submit" value="Create" class="btn btn-secondary" />
+                        <a asp-action="Index" class="btn btn-secondary-outline">Back to List</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

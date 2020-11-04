@@ -1,0 +1,20 @@
+﻿@model Photographie.ViewModel.LoginViewModel
+<div class="container" style="margin-top:100px">
+    <div class="row">
+        <div class="col-md-8">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input type="email" asp-for="Email" name="Email" placeholder="Admin@gmail.com" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="password" class="control-label"></label>
+                    <input type="password" asp-for="password" name="password" placeholder="Password" class="form-control" />
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                <input type="submit" value="Connexion" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>

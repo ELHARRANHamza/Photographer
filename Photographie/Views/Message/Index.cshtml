@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Photographie.Models.Message_>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container" style="margin-top:80px">
+    <h2 class="alert alert-primary">Liste Des Message Envoyées</h2>
+    <div class="row">
+
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nom)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Prenom)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Subject)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Message)
+                        </th>
+                        <th>
+                            Date Envoyer
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nom)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Prenom)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Subject)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Message)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.dateEnvoyer)
+                            </td>
+                            <td>
+                                <a class="btn btn-danger-outline" asp-action="Delete" asp-route-id="@item.Id"> <span class="mbri-trash"></span></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
